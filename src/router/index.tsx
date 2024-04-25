@@ -5,12 +5,14 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import Class_template from "@/pages/Class";
 import Loader from "@/pages/Loader";
 import App from "@/App";
+import ErrorPage from "@/pages/ErrorPage";
 const UseEffectTemplate = lazy(() => import("@/pages/UseEffectTemplate"));
 const router = createBrowserRouter([
 
   {
     path: "/",
     element: <Navigate to="/class" />,
+    errorElement: <ErrorPage></ErrorPage>
   },
   {
     path: "/",
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
                 name: 'loader',
                 list: [1, 2, 3, 4, 5]
               })
-            }, 1000)
+            }, 2000)
           })
         }
       },
