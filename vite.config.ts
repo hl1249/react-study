@@ -12,4 +12,9 @@ export default defineConfig({
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', ".less"]
   },
+  server: {
+    host: '0.0.0.0',
+    port: 8991,
+    // 是否开启 https
+  },
 })
