@@ -8,7 +8,8 @@ const App = () => {
           <div style={{gap:'10px',display:'flex'}}>
           <NavLink to={"/class"}>Class类组件</NavLink>
           <NavLink to={"/useEffectTemplate"}>UseEffectTemplate</NavLink>
-          <NavLink to={"/loader"}>Loader</NavLink>
+          <NavLink to={"/loader/2"}>Loader</NavLink>
+          <NavLink to={"/level"}>Level</NavLink>
           </div>
         
         <Outlet></Outlet>

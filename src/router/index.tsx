@@ -6,6 +6,9 @@ import Class_template from "@/pages/Class";
 import Loader from "@/pages/Loader";
 import App from "@/App";
 import ErrorPage from "@/pages/ErrorPage";
+import Level from "@/pages/Level";
+import Level_1 from "@/pages/Level_1";
+import Level_2 from "@/pages/Level_2";
 const UseEffectTemplate = lazy(() => import("@/pages/UseEffectTemplate"));
 const router = createBrowserRouter([
 
@@ -20,15 +23,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "/class",
+        path: "class",
         element: <Class_template></Class_template>,
       },
       {
-        path: "/useEffectTemplate",
+        path: "useEffectTemplate",
         element: <UseEffectTemplate></UseEffectTemplate>,
       },
       {
-        path: "/loader",
+        path: "loader/:id",
         element: <Loader />,
         loader: async () => {
           return new Promise((resolve) => {
@@ -40,6 +43,25 @@ const router = createBrowserRouter([
             }, 2000)
           })
         }
+      },
+      {
+        path: "level",
+        element: <Level />,
+        errorElement: <div>叼你妈嗨</div>,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="level-1" />
+          },
+          {
+            path: "level-1",
+            element: <Level_1 />
+          },
+          {
+            path: "level-2",
+            element: <Level_2 />
+          }
+        ]
       },
     ],
 
