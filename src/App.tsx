@@ -6,10 +6,10 @@ const App = () => {
         <div>
           <p>根组件</p>
           <div style={{gap:'10px',display:'flex'}}>
-          <NavLink to={"/class"}>Class类组件</NavLink>
-          <NavLink to={"/useEffectTemplate"}>UseEffectTemplate</NavLink>
-          <NavLink to={"/loader/2"}>Loader</NavLink>
-          <NavLink to={"/level"}>Level</NavLink>
+          <NavLink to={"/class"} className={({isActive})=>isActive?'nav-active':''}>Class类组件</NavLink>
+          <NavLink to={"/useEffectTemplate"} className={({isActive})=>isActive?'nav-active':''}>UseEffectTemplate</NavLink>
+          <NavLink to={"/loader/2"} className={({isActive})=>isActive?'nav-active':''}>Loader</NavLink>
+          <NavLink to={"/level"} className={({isActive})=>isActive?'nav-active':''}>Level</NavLink>
           </div>
         
         <Outlet></Outlet>

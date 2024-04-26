@@ -11,10 +11,10 @@ import "./index.css";
 import router from "./router";
 // 使用RouterProvider 加载路由对象
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Suspense>
       <RouterProvider router={router}>
       </RouterProvider>
       </Suspense>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
