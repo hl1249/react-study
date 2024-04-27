@@ -10,6 +10,9 @@ import Level from "@/pages/Level";
 import Level_1 from "@/pages/Level_1";
 import Level_2 from "@/pages/Level_2";
 
+import UseMemoPage from "@/pages/UseMemoPage";
+import UseCallbackPage from "@/pages/UseCallbackPage";
+import UseRefPage from "@/pages/UseRefPage";
 const UseEffectTemplate = lazy(() => import("@/pages/UseEffectTemplate"));
 
 const router = createBrowserRouter([
@@ -66,6 +69,17 @@ const router = createBrowserRouter([
           }
         ]
       },
+      {
+        path:"useMemoPage",
+        element:<UseMemoPage/>,
+      },
+      {
+        path:"useCallbackPage",
+        element:<UseCallbackPage/>,
+      },{
+        path:"useRefPage",
+        element:<UseRefPage/>,
+      }
     ],
 
   },

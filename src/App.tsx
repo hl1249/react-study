@@ -10,6 +10,10 @@ const App = () => {
           <NavLink to={"/useEffectTemplate"} className={({isActive})=>isActive?'nav-active':''}>UseEffectTemplate</NavLink>
           <NavLink to={"/loader/2"} className={({isActive})=>isActive?'nav-active':''}>Loader</NavLink>
           <NavLink to={"/level"} className={({isActive})=>isActive?'nav-active':''}>Level</NavLink>
+          <NavLink to={"/useMemoPage"} className={({isActive})=>isActive?'nav-active':''}>UseMemoPage</NavLink>
+          <NavLink to={"/useCallbackPage"} className={({isActive})=>isActive?'nav-active':''}>useCallbackPage</NavLink>
+
+          <NavLink to={"/useRefPage"} className={({isActive})=>isActive?'nav-active':''}>useRefPage</NavLink>
           </div>
         
         <Outlet></Outlet>
