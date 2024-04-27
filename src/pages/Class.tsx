@@ -9,8 +9,8 @@ interface class_template_state{
 
 class Class_template extends Component<class_template_props,class_template_state> {
     private myRef = createRef<HTMLDivElement>()
-    private componentRef = createRef<HTMLDivElement>()
-
+    componentRef: React.RefObject<Children_template>;
+    
     constructor(props: class_template_props){
         console.log("0-constructor")
          super(props)
@@ -21,7 +21,7 @@ class Class_template extends Component<class_template_props,class_template_state
 
          this.myRef = createRef<HTMLDivElement>()
 
-         this.componentRef = createRef<HTMLDivElement>()
+         this.componentRef = createRef();
     
     }
 
@@ -81,10 +81,16 @@ class Class_template extends Component<class_template_props,class_template_state
 }
 
 class Children_template extends Component {
+
+    myElementRef: React.RefObject<HTMLDivElement>;
+
     constructor(props: class_template_props){
         console.log("1-constructor")
         super(props)
 
+
+        this.myElementRef = createRef();
+        
         this.state = {
             name:"王五"
         }
@@ -99,7 +105,7 @@ class Children_template extends Component {
 
     render(){
         console.log("1-render")
-        return <div>子组件模板</div>
+        return <div  ref={this.myElementRef}>子组件模板</div>
     }
 
     getSnapshotBeforeUpdate() {
