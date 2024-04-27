@@ -2,32 +2,27 @@
 
 import { Outlet, NavLink } from "react-router-dom"
 const App = () => {
-  console.log('App')
-  // console.time()
-  // const now_time = new Date().getTime()
-  // while (new Date().getTime() - 2000 < now_time) {
-
-  // }
-  // console.timeEnd()
-  return (
-    <div>
-      <p>根组件</p>
-      <div style={{ gap: '10px', display: 'flex' }}>
-        <NavLink to={"/class"}>Class类组件</NavLink>
-        <NavLink to={"/useEffectTemplate"}>UseEffectTemplate</NavLink>
-        <NavLink to={"/loader/2"}>Loader</NavLink>
-        <NavLink to={"/level"}>Level</NavLink>
+    return (
+        <div>
+          <p>根组件</p>
+          <div style={{gap:'10px',display:'flex'}}>
+          <NavLink to={"/class"} className={({isActive})=>isActive?'nav-active':''}>Class类组件</NavLink>
+          <NavLink to={"/useEffectTemplate"} className={({isActive})=>isActive?'nav-active':''}>UseEffectTemplate</NavLink>
+          <NavLink to={"/loader/2"} className={({isActive})=>isActive?'nav-active':''}>Loader</NavLink>
+          <NavLink to={"/level"} className={({isActive})=>isActive?'nav-active':''}>Level</NavLink>
+          </div>
+        
+        <Outlet></Outlet>
       </div>
-
-      <Outlet></Outlet>
-    </div>
   )
 }
 
 
 export const loader = () => {
   console.log("加载Loader 组件时调用")
-  return null
+  return {name:"芜湖",
+    list:[1,2,3]
+  }
 }
 
 export default App
