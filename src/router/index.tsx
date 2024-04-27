@@ -4,12 +4,14 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import Class_template from "@/pages/Class";
 import Loader from "@/pages/Loader";
-import App from "@/App";
+import App,{loader as AppLoader} from "@/App";
 import ErrorPage from "@/pages/ErrorPage";
 import Level from "@/pages/Level";
 import Level_1 from "@/pages/Level_1";
 import Level_2 from "@/pages/Level_2";
+
 const UseEffectTemplate = lazy(() => import("@/pages/UseEffectTemplate"));
+
 const router = createBrowserRouter([
 
   {
@@ -33,16 +35,17 @@ const router = createBrowserRouter([
       {
         path: "loader/:id",
         element: <Loader />,
-        loader: async () => {
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              resolve({
-                name: 'loader',
-                list: [1, 2, 3, 4, 5]
-              })
-            }, 2000)
-          })
-        }
+        loader:AppLoader
+        // loader: async () => {
+        //   return new Promise((resolve) => {
+        //     setTimeout(() => {
+        //       resolve({
+        //         name: 'loader',
+        //         list: [1, 2, 3, 4, 5]
+        //       })
+        //     }, 2000)
+        //   })
+        // }
       },
       {
         path: "level",
