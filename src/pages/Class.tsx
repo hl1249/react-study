@@ -9,6 +9,7 @@ interface class_template_state{
 
 class Class_template extends Component<class_template_props,class_template_state> {
     private myRef = createRef<HTMLDivElement>()
+    private componentRef = createRef<HTMLDivElement>()
 
     constructor(props: class_template_props){
         console.log("0-constructor")
@@ -19,6 +20,8 @@ class Class_template extends Component<class_template_props,class_template_state
          }
 
          this.myRef = createRef<HTMLDivElement>()
+
+         this.componentRef = createRef<HTMLDivElement>()
     
     }
 
@@ -45,17 +48,18 @@ class Class_template extends Component<class_template_props,class_template_state
 
         return <div>
             <p onClick={changeName}>类组件模板-{this.state.name}</p>
-            <Children_template></Children_template>
+            <Children_template ref={this.componentRef}></Children_template>
 
             <div ref={this.myRef}>我是被ref绑定的元素</div>
         </div>
     }
 
-    // 虚拟dom构建 并且该组件的子组件的虚拟dom 构建完成
+    //修改时触发 虚拟dom构建 并且该组件的子组件的虚拟dom 构建完成
     getSnapshotBeforeUpdate() {
         
         // 可以拿到声明的ref组件 因为已经经过render 构架了虚拟dom
         console.log(this.myRef)
+        console.log(this.componentRef)
 
         console.log("0-getSnapshotBeforeUpdate")
         return null
@@ -68,6 +72,10 @@ class Class_template extends Component<class_template_props,class_template_state
 
     componentDidMount(): void {
         console.log("0-componentDidMount")
+        
+        // 可以拿到声明的ref组件 因为已经经过render 构架了虚拟dom
+        console.log(this.myRef)
+        console.log(this.componentRef)
     }
 
 }
