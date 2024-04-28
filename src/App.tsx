@@ -14,6 +14,8 @@ const App = () => {
           <NavLink to={"/useCallbackPage"} className={({isActive})=>isActive?'nav-active':''}>useCallbackPage</NavLink>
 
           <NavLink to={"/useRefPage"} className={({isActive})=>isActive?'nav-active':''}>useRefPage</NavLink>
+          <NavLink to={"/useContextPage"} className={({isActive})=>isActive?'nav-active':''}>useContextPage</NavLink>
+          <NavLink to={"/useTransitionPage"} className={({isActive})=>isActive?'nav-active':''}>useTransitionPage</NavLink>
           </div>
         
         <Outlet></Outlet>
@@ -28,5 +30,7 @@ export const loader = () => {
     list:[1,2,3]
   }
 }
+
+
 
 export default App
