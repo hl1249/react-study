@@ -26,6 +26,7 @@ const SlowItem: React.FC<SlowListProps> = ({ text }) => {
 const UseDeferredValuePage = () => {
   const [value, setValue] = useState("");
 
+  // 组件外部状态引起的渲染变成低优先级任务
   // 状态引起的渲染变成低优先级任务
   const deferredValue = useDeferredValue(value);
   

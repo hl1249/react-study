@@ -38,7 +38,7 @@ const Level_2 = () => {
     </div>
   )
 }
-// const Level_2_memo = React.memo(Level_2)
+const Level_2_memo = React.memo(Level_2)
 
 
 const Level_3 = () => {
@@ -55,6 +55,7 @@ const UseTransitionPage: React.FC = () => {
   const [isPending,startTransition] = useTransition()
   
   const handleClick = (index:number) => {
+    // 组件内部状态引起的渲染变成低优先级任务！！！
     // 深度优先遍历Fiber架构
     // 使用startTransition 包裹后 所有依赖current的函数 都将标记为同步任务 
     // 任务workInProgress 窝可音颇ruai斯 记录当前的树结构更新到了哪一步
@@ -72,18 +73,21 @@ const UseTransitionPage: React.FC = () => {
       <p>UseTransitionPage-{isPending}</p>
       <div style={{display:'flex',gap:'20px'}}>
       {
-        [0,1,2].map((item,index) => {
+        [0,1,2,3].map((item,index) => {
           return(
             <button key={item} onClick={() => {
               handleClick(index)
-            }} >Level_{index+1}</button>
+            }} >
+              {/* Level_{index+1} */}
+              Level_{index === 3 && 'Level-2使用memo' || index+1}
+            </button>
           )
         })
       }
       </div>
       <p></p>
       {
-       current === 0 ? <Level_1 /> : current === 1 ? <Level_2 /> : <Level_3 />
+       current === 0 ? <Level_1 /> : current === 1 ? <Level_2_memo /> : current === 2 ? <Level_3 /> : < Level_2_memo/>
       }
     </div>
   )

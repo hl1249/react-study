@@ -15,6 +15,7 @@ import UseRefPage from "@/pages/UseRefPage";
 import UseContextPage from "@/pages/UseContextPage";
 import UseTransitionPage from "@/pages/UseTransitionPage";
 import UseDeferredValuePage from "@/pages/UseDeferredValuePage";
+import UseDebugValuePage from "@/pages/useDebugValuePage"
 // import UseEffectTemplate from "@/pages/UseEffectTemplate";
 const UseEffectTemplate = lazy(() => import("@/pages/UseEffectTemplate"));
 
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
       {
         path:"useDeferredValuePage",
         element: <UseDeferredValuePage />,
+      },
+      {
+        path:"useDebugValuePage",
+        element: <UseDebugValuePage />,
       }
     ],
   },

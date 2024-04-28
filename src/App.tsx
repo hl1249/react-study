@@ -5,7 +5,7 @@ const App = () => {
     return (
         <div>
           <p>根组件</p>
-          <div style={{gap:'10px',display:'flex'}}>
+          <div style={{gap:'10px',display:'flex',flexWrap:'wrap'}}>
           <NavLink to={"/class"} className={({isActive})=>isActive?'nav-active':''}>Class类组件</NavLink>
           <NavLink to={"/useEffectTemplate"} className={({isActive})=>isActive?'nav-active':''}>UseEffectTemplate</NavLink>
           <NavLink to={"/loader/2"} className={({isActive})=>isActive?'nav-active':''}>Loader</NavLink>
@@ -17,6 +17,7 @@ const App = () => {
           <NavLink to={"/useContextPage"} className={({isActive})=>isActive?'nav-active':''}>useContextPage</NavLink>
           <NavLink to={"/useTransitionPage"} className={({isActive})=>isActive?'nav-active':''}>useTransitionPage</NavLink>
           <NavLink to={"/useDeferredValuePage"} className={({isActive})=>isActive?'nav-active':''}>useDeferredValuePage</NavLink>
+          <NavLink to={"/useDebugValuePage"} className={({isActive})=>isActive?'nav-active':''}>useDebugValuePage</NavLink>
           </div>
         
         <Outlet></Outlet>
