@@ -11,16 +11,19 @@ const ChildComponent = forwardRef((props, ref) => {
   }) )
   return (
     <div>
-      <p>自组建</p>
+      <p>子组件</p>
     </div>
   )
 })
+interface myRefProps {
+  doSomething: () => void
+}
 const UseImperativeHandlePage = () => {
-  const myRef = useRef()
+  const myRef = useRef<myRefProps | null>(null)
 
   useEffect(()=>{
     console.log('myRef',myRef.current)
-    myRef.current.doSomething()
+    myRef.current?.doSomething()
   })
   return (
     <div> 
