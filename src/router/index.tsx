@@ -14,6 +14,7 @@ import UseCallbackPage from "@/pages/UseCallbackPage";
 import UseRefPage from "@/pages/UseRefPage";
 import UseContextPage from "@/pages/UseContextPage";
 import UseTransitionPage from "@/pages/UseTransitionPage";
+import UseDeferredValuePage from "@/pages/UseDeferredValuePage";
 // import UseEffectTemplate from "@/pages/UseEffectTemplate";
 const UseEffectTemplate = lazy(() => import("@/pages/UseEffectTemplate"));
 
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
       {
         path: "useTransitionPage",
         element: <UseTransitionPage/>,
+      },
+      {
+        path:"useDeferredValuePage",
+        element: <UseDeferredValuePage />,
       }
     ],
   },

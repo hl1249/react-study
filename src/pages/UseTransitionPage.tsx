@@ -1,4 +1,4 @@
-import { useTransition,useState, FC } from "react"
+import React,{ useTransition,useState, FC  } from "react"
 
 const Level_1 = () => {
   console.log('Level_1渲染')
@@ -38,6 +38,8 @@ const Level_2 = () => {
     </div>
   )
 }
+// const Level_2_memo = React.memo(Level_2)
+
 
 const Level_3 = () => {
   console.log('Level_3渲染')
@@ -53,10 +55,15 @@ const UseTransitionPage: React.FC = () => {
   const [isPending,startTransition] = useTransition()
   
   const handleClick = (index:number) => {
+    // 深度优先遍历Fiber架构
+    // 使用startTransition 包裹后 所有依赖current的函数 都将标记为同步任务 
+    // 任务workInProgress 窝可音颇ruai斯 记录当前的树结构更新到了哪一步
     startTransition(() => {
       setCurrent(index)
     })
   }
+
+  console.log('isPending',isPending)
   // const handleClick = (index) => {
       // setCurrent(index)
   // }

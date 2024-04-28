@@ -4,9 +4,9 @@ import { createRef, useEffect, useLayoutEffect, useState } from "react"
 
 function useEffectTemplate() {
 
-    const now_time = new Date().getTime()+200
+    const now_time = new Date().getTime()+1
     while(now_time > new Date().getTime() ){
-        console.log("模拟阻塞")
+        // console.log("模拟阻塞")
     }
 
     const [name,setName] = useState('张三')
