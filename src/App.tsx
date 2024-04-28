@@ -18,6 +18,8 @@ const App = () => {
           <NavLink to={"/useTransitionPage"} className={({isActive})=>isActive?'nav-active':''}>useTransitionPage</NavLink>
           <NavLink to={"/useDeferredValuePage"} className={({isActive})=>isActive?'nav-active':''}>useDeferredValuePage</NavLink>
           <NavLink to={"/useDebugValuePage"} className={({isActive})=>isActive?'nav-active':''}>useDebugValuePage</NavLink>
+          <NavLink to={"/useImperativeHandlePage"} className={({isActive})=>isActive?'nav-active':''}>useImperativeHandlePage</NavLink>
+          
           </div>
         
         <Outlet></Outlet>
